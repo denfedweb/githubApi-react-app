@@ -35,7 +35,7 @@ const GithubState = ({children}) => {
     const getUser = async name => {
         setLoader();
         const response = await axios.get(
-            withCreds(`https://api.github.com/search/users/${name}?`)
+            withCreds(`https://api.github.com/users/${name}?`)
         );
       dispatch({
           type: GET_USER,
@@ -46,7 +46,7 @@ const GithubState = ({children}) => {
     const getRepos = async name => {
         setLoader();
         const response = await axios.get(
-            withCreds(`https://api.github.com/search/users/${name}/repos?per_page=5&`)
+            withCreds(`https://api.github.com/users/${name}/repos?per_page=5&`)
         );
         dispatch({
             type: GET_REPOS,
